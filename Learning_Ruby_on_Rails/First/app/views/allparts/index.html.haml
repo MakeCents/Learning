@@ -1,0 +1,19 @@
+-#  This file is app/views/allparts/index.html.haml
+%h1 All Allparts
+
+%table#allparts
+  %thead
+    %tr
+      %th Allparts
+      %th Rating
+      %th Release Date
+      %th More Info
+  %tbody
+    - @allparts.each do |allpart|
+      %tr
+        %td= allpart.title 
+        %td= allpart.rating
+        %td= allpart.release_date
+        %td= link_to "More about #{allpart.title}", allpart_path(allpart)
+
+= link_to 'Add new allpart', new_allpart_path

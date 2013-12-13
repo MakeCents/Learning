@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+		<title>MakeCents</title>
+	</head>
+	<div id="header">
+	    
+	</div>
+	<div class='left'>
+	    
+	</div>
+	<div class='right'>
+	    <h1>Header one</h1>
+			<p>
+				Paragraph
+			</p>
+				<ol>
+					<li>list item one</li>
+					<li>list item 2</li>
+				</ol>
+	</div>
+	<div id='footer'>
+	    
+	</div>
+	
+	<body></body>
+</html>

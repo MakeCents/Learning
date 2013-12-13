@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>JavaScript Form - Input Text Field</TITLE>
+ 
+	<style type="text/css">
+		
+		div {
+		    position: fixed;
+		    text-align: center;
+		    margin: -10px 0 0 -8px;
+		    height: 100%;
+		    width: 100%;
+		    background-color: silver;
+		    color: #FFFFFF;
+		    font-family: Verdana, Arial, Sans-Serif;
+		    display: block;
+		}
+		/*img {
+			position: fixed;
+			text-align: left;
+			margin: 0px 0px 0px 0px;
+			padding:10px 10px 10px 10px;
+		}*/
+		space {
+			padding:10px 10px 10px 10px;
+			/*background-color:blue;*/
+		}
+		.cw {
+			background-color:white;
+			padding: 10px 10px 10px 10px;
+		}
+		h2 {
+			color: black;
+		}
+		p {
+			color: green;
+		}
+		label {
+			color: blue;
+		}
+	</style>
+	<SCRIPT Language="JavaScript">
+		function promptstuff(){
+			var f = prompt("Name? ");
+			if (f === 'Dave'){
+				alert('You have access');
+			}
+			else {
+				alert(f + ' does not have access');
+			}
+		}
+		function showAndClearField(frm){
+
+		  if (frm.firstName.value == "")
+		      alert("Hey! You didn't enter anything!")
+		  else
+		      alert("The field contains the text: " + frm.firstName.value)
+		  frm.firstName.value = ""
+		  frm.times.value = ""
+		  
+		}
+		function Mult(frm){
+			frm.answer.value = frm.times.value * frm.firstName.value
+			frm.what.value = "  * "
+			frm.what.style["width"] ='20px';
+			clc(frm)
+			frm.mu.style["background-color"] = 'red'
+		}
+		function Div(frm){
+			frm.answer.value = frm.firstName.value/frm.times.value
+			frm.what.value = "  / "
+			frm.what.style["width"] ='20px';
+			clc(frm)
+			frm.di.style["background-color"] = 'red'
+		}
+		function Add(frm){
+			frm.answer.value = frm.firstName.value - (-frm.times.value)
+			frm.what.value = "  + "
+			frm.what.style["width"] ='20px';
+			clc(frm)
+			frm.ad.style["background-color"] = 'red'
+		}
+		function Sub(frm){
+			clc(frm)
+			frm.answer.value = frm.firstName.value - frm.times.value
+			frm.what.value = "  - "
+			frm.su.style["background-color"] = 'red'
+		}
+		function Clear(frm){
+			frm.firstName.value = ""
+			frm.times.value = ""
+			frm.what.value = ""
+		}
+		function cla(frm){
+			if (frm.what.value === '  + '){
+				Add(frm);
+			}
+			if (frm.what.value === '  - '){
+				Sub(frm);
+			}
+			if (frm.what.value === '  * '){
+				Mult(frm);
+			}
+			if (frm.what.value === '  / '){
+				Div(frm);
+			}
+		}
+		function clc(frm){
+			frm.mu.style["background-color"] = ''
+			frm.di.style["background-color"] = ''
+			frm.ad.style["background-color"] = ''
+			frm.su.style["background-color"] = ''
+			frm.answer.style["background-color"] = '#FFFFCC';
+			}
+	</SCRIPT>
+</HEAD>
+<BODY>
+<FORM NAME="test">
+<div><img src = "https://lh6.googleusercontent.com/njFb9AuwStXlMpiuZd7Z9gD5qODnEoS4ggLegMf4fL0O=w279-h209-p-no">
+<H2>My Calculator <br></H2>
+<P>This number: <INPUT TYPE="TEXT" NAME="firstName" onchange = 'cla(this.form)'><BR>
+<!-- <INPUT TYPE="Button" Value="Submit and clear form" onClick="showAndClearField(this.form)"> -->
+<P>
+</P>
+<p>
+<p>This number:<INPUT TYPE="TEXT" NAME="times" onchange = 'cla(this.form)'></p><BR>
+<space>Action: <INPUT style ='width:20px' TYPE="TEXT" NAME="what" disabled></space>
+<space  class="cw">
+<INPUT TYPE="Button" Value=" * " name = 'mu' onClick="Mult(this.form)">
+<INPUT TYPE="Button" Value=" / " name = 'di' onClick="Div(this.form)">
+<INPUT TYPE="Button" Value=" + " name = 'ad' onClick="Add(this.form)">
+<INPUT TYPE="Button" Value=" - " name = 'su' onClick="Sub(this.form)"><br><br>
+</space><space class="cw">
+<INPUT TYPE="TEXT" NAME="answer" onchange = "Clear(this.form)" style="text-align: center" disabled>
+<label>Answer</label>
+</space><BR>
+</p>
+</div>
+</FORM>
+</BODY>
+</HTML>

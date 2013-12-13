@@ -1,0 +1,19 @@
+-# in app/views/allparts/show.html.haml
+
+%h2 Details about #{@allpart.title}
+
+%ul#details
+  %li
+    Rating:
+    = @allpart.rating
+  %li
+    Released on:
+    = @allpart.release_date.strftime("%B %d, %Y")
+
+%h3 Description:
+
+%p#description= @allpart.description
+
+= link_to 'Edit', edit_allpart_path(@allpart)
+= button_to 'Delete', allpart_path(@allpart), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to allpart list', allparts_path

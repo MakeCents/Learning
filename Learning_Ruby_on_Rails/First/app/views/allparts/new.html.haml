@@ -1,0 +1,14 @@
+%h1 Create New Allpart
+
+= form_tag allparts_path do
+
+  = label :allpart, :title, 'Title'
+  = text_field :allpart, 'title'
+
+  = label :allpart, :rating, 'Rating'
+  = select :allpart, :rating, ['G','PG','PG-13','R','NC-17']
+
+  = label :allpart, :release_date, 'Released On'
+  = date_select :allpart, :release_date
+
+  = submit_tag 'Save Changes'
